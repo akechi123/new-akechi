@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f7d6d6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .gallery {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+    padding: 20px;
+    overflow: hidden;
+  }
+
+  .gallery img {
+    width: 200px; /* Set fixed width */
+    height: 200px; /* Set fixed height */
+    object-fit: cover; /* Ensures images are cropped to fit the square */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+
+  .gallery img:hover {
+    transform: translateY(-10px);
+  }
+
+  .sliding-box {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.5s ease;
+    z-index: 10;
+    overflow-y: auto;
+  }
+
+  .sliding-box.open {
+    right: 0;
+  }
+
+  .sliding-box .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 15;
+    transition: opacity 0.3s ease;
+  }
+
+  .back-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 5;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+  .gallery-header {
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  
+  .gallery-title {
+    font-size: 2rem;
+    color: #ca455b;
+    text-shadow: 2px 2px rgb(248, 228, 228);
+  }
+  
+  .gallery-desc {
+    font-size: 1.2rem;
+    color: rgb(185, 96, 115);
+    font-style: italic;
+  }
+  
+  .sliding-box h2 {
+    font-size: 2rem; /* Increase the font size */
+    font-weight: bold; /* Make it bold */
+    color: #ca455b; /* Match gallery title color */
+    text-align: center; /* Center the text */
+    text-shadow: 2px 2px rgb(248, 228, 228); /* Optional: Add a shadow */
+  }
+  
+  #slidingBoxContent {
+    padding-bottom: 20px; /* Add space at the bottom */
+  }
+  

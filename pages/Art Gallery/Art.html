@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Image Gallery</title>
+</head>
+<body>
+
+  <div class="gallery-header">
+    <h1 class="gallery-title">MEDIA I LIKE</h1>
+    <p class="gallery-desc">autism page</p>
+  </div>
+  
+  <!-- Back Button -->
+  <a href="../../index.html" class="back-btn" id="backBtn">Back</a>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="../../images/crk loading2.jpg" 
+         alt="cookie run kingdom loading screen" 
+         onclick="openBox(this)"
+         data-title="Cookie Run Kingdom Loading Screen"
+         data-description="This is a fan-made recreation of a Cookie Run Kingdom loading screen!"
+         data-color="#FFD1DC"> <!-- Light Pink -->
+  
+    <img src="../../images/devilman02.webp" 
+         alt="Devilman Fanart" 
+         onclick="openBox(this)"
+         data-title="Devilman Crybaby Visual"
+         data-description="Devilman Crybaby is an original anime series produced by Netflix and released in 2018. It is a modern re-imagining of the Devilman franchise, following the main story from the manga, while making adjustments to set the story in the modern day."
+         data-color="#1E1E1E"> <!-- Dark Grey -->
+  
+    <img src="../../images/king visual.webp" 
+         alt="Vocaloid Cover" 
+         onclick="openBox(this)"
+         data-title="Vocaloid"
+         data-description="This is just a placeholder image for testing purposes."
+         data-color="#780002">
+  </div>
+  
+
+  <!-- Sliding Box -->
+  <div class="sliding-box" id="slidingBox">
+    <span class="close-btn" onclick="closeBox()">X</span>
+    <div id="slidingBoxContent">
+      <!-- Content for the sliding box -->
+      <h2>Selected Image</h2>
+      <p>Put content here.</p>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closeBox()"></div>
+  <script src="script.js"></script>
+</body>
+</html>
