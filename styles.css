@@ -11,12 +11,10 @@ body {
     padding: 0;
 }
 
-
 @keyframes slideText {
     from { transform: translateX(1200%); }
     to { transform: translateX(-100%); }
 }
-
 
 .header-text {
     color: #fff;
@@ -52,6 +50,8 @@ body {
     box-sizing: border-box;
     justify-content: space-between;
     width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .SectionTab {
@@ -61,12 +61,12 @@ body {
 }
 
 .SectionTitle {
-    padding:10px;
+    padding: 10px;
     font-size: 16px;
 }
 
 .SectionTitle img {
-    width:20px;
+    width: 20px;
     height: auto;
     image-resolution: 100%;
 }
@@ -82,21 +82,22 @@ button {
     font-size: 10px;
     text-transform: uppercase;
     padding: 5px;
-    cursor:pointer;
+    cursor: pointer;
+    max-width: 90%;
 }
 
 .container {
     margin-top: 50px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
     background-color: #FFCAD4;
     padding: 20px;
     position: relative;
     flex-grow: 1;
     border: 8px solid #FFE5D9;
-    border-radius: 20px; /* Optional: Rounded corners */
+    border-radius: 20px;
 }
-
 
 .rena-text {
     font-size: 55px;
@@ -120,15 +121,22 @@ button {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+.left, .right {
+    flex: 1;
+    min-width: 300px;
+}
+
 .left {
-    width: 60%;
+    flex: 2;
     display: flex;
     flex-direction: column;
+    min-width: 60%;
 }
 
 .left p {
     max-width: 85%;
     word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .left p:last-of-type {
@@ -145,6 +153,11 @@ button {
     width: 450px;
 }
 
+.box img, .floating-sticker {
+    max-width: 100%;
+    height: auto;
+}
+
 p {
     font-family: "Gabarito", serif;
     font-size: 18px;
@@ -155,7 +168,9 @@ p:first-of-type {
 }
 
 .right {
-    width: 35%;
+    flex: 1;
+    min-width: 35%;
+    max-width: 40%;
 }
 
 .card {
@@ -168,13 +183,12 @@ p:first-of-type {
 
 .image-placeholder {
     position: relative;
-    background-image: url('images/partfait\ bg.jpg'); /* Replace with your image path */
+    background-image: url('images/partfait\ bg.jpg');
     background-size: cover;
     background-position: center;
     height: 460px;
     margin-bottom: 10px;
 }
-
 
 .floating-sticker {
     position: absolute;
@@ -198,7 +212,6 @@ p:first-of-type {
     75% { transform: translateX(-50%) rotate(5deg); }
     100% { transform: translateX(-50%) rotate(0deg); }
 }
-
 
 .scroll-top {
     position: fixed;
@@ -251,9 +264,6 @@ p:first-of-type {
     display: block;
 }
 
-
-
-
 li {
     color: purple;
 }
@@ -275,27 +285,24 @@ li {
     padding-top: 0;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-    }
+}
 
-    .bottom-ad:hover {
-        cursor: pointer;
-    }
+.bottom-ad:hover {
+    cursor: pointer;
+}
 
-    .popup-text {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 6px 10px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-family: "Gabarito", serif;
-        color: #b66a6a;
-        white-space: nowrap;
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth floating effect */
-    }
-    
-    
-    
+.popup-text {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Gabarito", serif;
+    color: #b66a6a;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}  
